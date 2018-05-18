@@ -1,0 +1,13 @@
+import board, neopixel, time, random
+pixpin = board.D1
+numpix = 16
+
+pixels = neopixel.NeoPixel(pixpin, numpix, brightness=.3)
+
+while True:
+    for i in range(numpix):
+        pixels[i] = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
+        time.sleep(0.1)
+    pixels.write()
+    time.sleep(3)
+  
